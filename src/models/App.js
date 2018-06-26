@@ -1,9 +1,8 @@
-import { request, API } from '../utils'
+import { request,API } from '../utils'
 export default {
   namespace: 'app',
   state: {
-    name: 'z', // 名字
-
+    name: '', // 名字
   },
   reducers: {
     /**

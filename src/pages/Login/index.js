@@ -13,6 +13,13 @@ class Login extends Component {
     static navigationOptions = {
         header: null
     };
+    constructor(props) {
+        super(props);
+        this.state = {
+            username: '',
+            password: ''
+        }
+    }
     doLogin = (username, password)=>{
         const { dispatch } = this.props;
         /**
@@ -30,7 +37,7 @@ class Login extends Component {
                     if(!result.status){
                         return;
                     }
-
+                    this.props.navigation.navigate('Home')
                 }
             }
         })
@@ -40,14 +47,13 @@ class Login extends Component {
             <View>
 
                 <View>
-                    <TextInput/>
+                    <TextInput onChangeText={(text) => this.setState({username: text})}/>
                 </View>
                 <View>
-                    <TextInput/>
+                    <TextInput onChangeText={(text) => this.setState({password: text})}/>
                 </View>
                 <TouchableOpacity onPress={()=>{
-                    this.doLogin('zyw', '1111')
-                    this.props.navigation.navigate('Home')
+                    this.doLogin(this.state.username, this.state.password)
                 }} style={{alignItems: 'center'}}>
                     <Text>登录</Text>
                 </TouchableOpacity>
