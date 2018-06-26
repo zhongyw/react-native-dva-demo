@@ -26,7 +26,9 @@ class Login extends Component {
                 <View>
                     <TextInput/>
                 </View>
-                <TouchableOpacity style={{alignItems: 'center'}}>
+                <TouchableOpacity onPress={()=>{
+                    this.props.navigation.navigate('Home')
+                }} style={{alignItems: 'center'}}>
                     <Text>登录</Text>
                 </TouchableOpacity>
             </View>
