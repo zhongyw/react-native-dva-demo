@@ -3,21 +3,7 @@ import {
     StackNavigator,
     TabNavigator,
 } from 'react-navigation';
-import {
-    StyleSheet,
-    Image,
-    NativeAppEventEmitter,
-    Platform,
-    Alert,
-    Linking,
-    View,
-    AppRegistry,
-    BackAndroid,
-    Dimensions,
-    BackHandler,
-    PixelRatio,
-    DeviceEventEmitter
-} from "react-native";
+
 import {connect} from 'react-redux';
 import Login from '../pages/Login';
 class Router extends Component {

@@ -5,19 +5,6 @@ import { Provider, connect } from 'react-redux';
 import Router from './routes';
 
 import models from './models'
-
-import { AsyncStorage } from 'react-native';
-
-
-
-// To see all the requests in the chrome Dev tools in the network tab.
-
-// RN0.54之后，不再适用。如果要查看网络请求，只需要在React Native debugger中点击右键，选择Enable Network Inspect
-// global.FormData = global.originalFormData ?
-//   global.originalFormData :
-//   global.FormData;
-
-
 // 禁用屏幕底部的黄色警告
 console.disableYellowBox = true;
 
