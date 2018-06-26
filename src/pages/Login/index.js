@@ -14,7 +14,26 @@ class Login extends Component {
         header: null
     };
     doLogin = (username, password)=>{
+        const { dispatch } = this.props;
+        /**
+         * 在组件中dispatch action
+         * 一定要写namespace
+         */
+        dispatch({
+            type: `app/login`,
+            payload: {
+                data: {
+                    username: username,
+                    password: password,
+                },
+                callback: (result)=>{
+                    if(!result.status){
+                        return;
+                    }
 
+                }
+            }
+        })
     }
     render(){
         return (
@@ -27,6 +46,7 @@ class Login extends Component {
                     <TextInput/>
                 </View>
                 <TouchableOpacity onPress={()=>{
+                    this.doLogin('zyw', '1111')
                     this.props.navigation.navigate('Home')
                 }} style={{alignItems: 'center'}}>
                     <Text>登录</Text>
